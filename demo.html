@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>bc-sun-chart Demo</title>
+
+  <script src="../platform/platform.js"></script>
+  <link rel="import" href="bc-sun-chart.html">
+
+  <script src="../jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="../timezone-js/src/date.js"></script>
+
+  <style>
+    html {
+      background-color: #333;
+      color: white;
+      padding: 40px;
+    }
+    a, a:visited {
+      color: steelblue;
+    }
+  </style>
+
+</head>
+<body unresolved>
+
+  <p>A `bc-sun-chart` looks like this:</p>
+
+  <template is="auto-binding" id="demo-container">
+    <bc-sun-chart
+      height="80"
+      width="600"
+      dataDomain="{{dataDomain}}"
+      domain="{{domain}}"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      timezone="{{timezone}}"></bc-sun-chart>
+
+    <h2>Timezone: {{timezone}}</h2>
+
+    <h2>Position</h2>
+    <dl>
+      <dt>Latitude:</dt>
+      <dd>{{latitude}}</dd>
+      <dt>Longitude:</dt>
+      <dd>{{longitude}}</dd>
+    </dl>
+
+    <h2>Domain:</h2>
+    <dl>
+      <dt>Start:</dt>
+      <dd>{{domain[0]}}</dd>
+      <dt>End:</dt>
+      <dd>{{domain[1]}}</dd>
+    </dl>
+
+  </template>
+
+  <p>
+    <a href="index.html">documentation</a> |
+    <a href="https://github.com/BilgeCode/bc-sun-chart">github</a>
+  </p>
+
+  <script>
+    timezoneJS.timezone.zoneFileBasePath = '../tz';
+    timezoneJS.timezone.loadingScheme = timezoneJS.timezone.loadingSchemes.PRELOAD_ALL;
+    timezoneJS.timezone.init({async: false});
+
+    var template = document.getElementById('demo-container');
+    template.debug = true;
+    template.centerline = true;
+    template.timezone = "Pacific/Auckland";
+    template.latitude = -36.72;
+    template.longitude = 175.04;
+    template.domain = [
+      new timezoneJS.Date(new Date(2014, 7, 26), template.timezone),
+      new timezoneJS.Date(new Date(2014, 7, 27), template.timezone)
+    ];
+    template.dataDomain = [
+      new timezoneJS.Date(new Date(2014, 7, 24), template.timezone),
+      new timezoneJS.Date(new Date(2014, 8, 3), template.timezone)
+    ];
+  </script>
+
+</body>
+</html>

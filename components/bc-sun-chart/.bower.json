@@ -1,0 +1,24 @@
+{
+  "name": "bc-sun-chart",
+  "keywords": "sunrise, sunset, chart, polymer, web-components",
+  "main": "bc-sun-chart.html",
+  "dependencies": {
+    "bc-d3-areachart": "bilgecode/bc-d3-areachart#~0.1.0",
+    "jquery": "jquery/jquery#1.9.1",
+    "polymer": "Polymer/polymer#~0.3.1",
+    "suncalc": "mourner/suncalc",
+    "timezone-js": "mde/timezone-js#0.4.11",
+    "tz": "eggert/tz"
+  },
+  "homepage": "https://github.com/bilgecode/bc-sun-chart",
+  "_release": "d4608118a9",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d4608118a98cde425f925cb5cf445e5712971863"
+  },
+  "_source": "git://github.com/bilgecode/bc-sun-chart.git",
+  "_target": "master",
+  "_originalSource": "bilgecode/bc-sun-chart",
+  "_direct": true
+}

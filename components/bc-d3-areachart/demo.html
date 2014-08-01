@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>bc-d3-areachart Demo</title>
+
+  <script src="../platform/platform.js"></script>
+    <script src="../d3/d3.min.js"></script>
+  <link rel="import" href="../polymer/polymer.html">
+  <link rel="import" href="bc-d3-areachart.html">
+
+  <style>
+    html {
+      background-color: #333;
+      color: white;
+      padding: 40px;
+    }
+    a, a:visited {
+      color: steelblue;
+    }
+  </style>
+
+</head>
+<body unresolved>
+
+  <p>An `bc-d3-areachart` looks like this:</p>
+
+  <p>
+    <button onClick="randomizeData()">Randomize Data</button>
+    <button onClick="raiseWidth()">Grow Size</button>
+    <button onClick="dropWidth()">Shrink Size</button>
+    <button onClick="shrinkDomain()">Shrink Domain</button>
+    <button onClick="expandDomain()">Expand Domain</button>
+  </p>
+
+  <template is="auto-binding" id="demo-container">
+    <bc-d3-areachart
+      id="graph"
+      centerline="{{centerline}}"
+      data="{{data}}"
+      domain="{{domain}}"
+      debug="{{debug}}"
+      height="{{height}}"
+      showPoints="{{showpoints}}"
+      width="{{width}}"></bc-d3-areachart>
+
+      <h2>Domain Property:</h2>
+      <dl>
+        <dt>Start:</dt>
+        <dd>{{domain[0]}}</dd>
+        <dt>End:</dt>
+        <dd>{{domain[1]}}</dd>
+      </dl>
+
+      <h2>Dimensions:</h2>
+      <dl>
+        <dt>Height:</dt>
+        <dd>{{height}}</dd>
+        <dt>Wdith:</dt>
+        <dd>{{width}}</dd>
+      </dl>
+  </template>
+
+  <p>
+    <a href="index.html">documentation</a> |
+    <a href="https://github.com/BilgeCode/bc-d3-areachart">github</a>
+  </p>
+
+  <script>
+
+    var format = d3.time.format("%Y-%m-%d");
+    var template = document.getElementById('demo-container');
+    template.debug = true;
+    template.centerline = true;
+    template.showpoints = true;
+    template.height = 100;
+    template.width = 400;
+    template.data = [
+      {xVal: format.parse("2014-02-01"), yVal: 10, label: "WSW"},
+      {xVal: format.parse("2014-02-02"), yVal: 8, label: "SSW"},
+      {xVal: format.parse("2014-02-03"), yVal: 6, label: "S"},
+      {xVal: format.parse("2014-02-04"), yVal: 4.7, label: "SE"},
+      {xVal: format.parse("2014-02-05"), yVal: 8, label: "E"},
+      {xVal: format.parse("2014-02-06"), yVal: 6, label: "N"},
+      {xVal: format.parse("2014-02-07"), yVal: 4, label: "N"},
+      {xVal: format.parse("2014-02-08"), yVal: 8.5, label: "WSW"},
+      {xVal: format.parse("2014-02-09"), yVal: 7, label: "WSW"},
+      {xVal: format.parse("2014-02-10"), yVal: 1, label: "WSW"}
+    ];
+
+    var d1 = 0;
+    var d2 = template.data.length - 1;
+    template.domain = [
+      template.data[d1].xVal,
+      template.data[d2].xVal
+    ];
+
+    function randomizeData() {
+      var template = document.getElementById('demo-container');
+      var max = 15;
+      newData = [];
+      for(i=0;i<template.data.length;i++) {
+        var newD = template.data[i];
+        var newVal = Math.floor((Math.random()*max));
+        newD.yVal = newVal;
+        newData.push(newD);
+      }
+      template.data = newData;
+    }
+
+    function dropWidth() {
+      var g = document.getElementById('graph');
+      g.width = -50 + (g.width*1);
+      g.height = -10 + (g.height*1);
+    }
+
+    function raiseWidth() {
+      var g = document.getElementById('graph');
+      g.width = 50 + (g.width*1);
+      g.height = 10 + (g.height*1);
+    }
+
+    function shrinkDomain() {
+      var g = document.getElementById('graph');
+      if (d2 > 1) {d2--;}
+      g.domain = [g.data[d1].xVal, g.data[d2].xVal];
+    }
+
+    function expandDomain() {
+      var g = document.getElementById('graph');
+      if (d2 < g.data.length - 1) {d2++;}
+      g.domain = [g.data[d1].xVal, g.data[d2].xVal];
+    }
+  </script>
+
+</body>
+</html>

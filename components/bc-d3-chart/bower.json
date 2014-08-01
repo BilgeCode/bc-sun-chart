@@ -1,0 +1,10 @@
+{
+  "name": "bc-d3-chart",
+  "version": "0.2.0",
+  "keywords": "d3, polymer, web-components",
+  "main": "bc-d3-chart.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.1",
+    "bc-d3-base": "bilgecode/bc-d3-base#~0.2.0"
+  }
+}

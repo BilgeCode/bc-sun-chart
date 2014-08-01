@@ -1,0 +1,10 @@
+{
+  "name": "bc-d3-base",
+  "version": "0.2.0",
+  "keywords": "d3, polymer, web-components",
+  "main": "bc-d3-base.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.1",
+    "d3": "~3.4.11"
+  }
+}

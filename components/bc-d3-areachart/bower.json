@@ -1,0 +1,16 @@
+{
+  "name": "bc-d3-areachart",
+  "description": "Element draws an svg singraph using d3.js",
+  "version": "0.1.0",
+  "keywords": "d3, area, chart, polymer, web-components",
+  "authors": [
+    "Benjamin W Stookey"
+  ],
+  "main": "bc-d3-areachart.html",
+  "license": "MIT",
+  "homepage": "http://bilgecode.github.io/bc-d3-areachart/",
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.1",
+    "bc-d3-chart": "bilgecode/bc-d3-chart#~0.2.0"
+  }
+}

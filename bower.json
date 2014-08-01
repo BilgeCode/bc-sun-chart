@@ -1,0 +1,7 @@
+{
+  "name": "bc-sun-chart#gh-pages",
+  "private": true,
+  "dependencies": {
+    "bc-sun-chart": "bilgecode/bc-sun-chart#master"
+  }
+}

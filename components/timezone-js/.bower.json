@@ -1,0 +1,20 @@
+{
+  "name": "timezone-js",
+  "version": "0.4.11",
+  "main": "src/date.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "homepage": "https://github.com/mde/timezone-js",
+  "_release": "0.4.11",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.4.11",
+    "commit": "07c46c0c92949850a5477c4515656fed1c2a8c53"
+  },
+  "_source": "git://github.com/mde/timezone-js.git",
+  "_target": "0.4.11",
+  "_originalSource": "mde/timezone-js"
+}

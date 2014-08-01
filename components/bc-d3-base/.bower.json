@@ -1,0 +1,20 @@
+{
+  "name": "bc-d3-base",
+  "version": "0.2.0",
+  "keywords": "d3, polymer, web-components",
+  "main": "bc-d3-base.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.1",
+    "d3": "~3.4.11"
+  },
+  "homepage": "https://github.com/bilgecode/bc-d3-base",
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.0",
+    "commit": "a94afc79132f40abd2a48473e8ad1d0e5e4b29ce"
+  },
+  "_source": "git://github.com/bilgecode/bc-d3-base.git",
+  "_target": "~0.2.0",
+  "_originalSource": "bilgecode/bc-d3-base"
+}

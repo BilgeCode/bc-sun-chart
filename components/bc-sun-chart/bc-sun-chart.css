@@ -1,0 +1,24 @@
+:host {
+  display: block;
+  color: red;
+}
+
+:host bc-sun-areachart::shadow .area-chart {
+  fill: #FFF9C4;
+}
+
+:host bc-sun-areachart::shadow .chartContainer {
+  background-color: lightsteelblue;
+  border: 0px solid #ffffff;
+  margin: 0px;
+}
+
+:host bc-sun-areachart::shadow .darkRect {
+  fill: #333;
+  opacity: .5;
+}
+
+:host bc-sun-areachart::shadow .data-point {
+  stroke: transparent;
+  fill: #FFAB40;
+}

@@ -32,8 +32,7 @@
       },
 
       /**
-       * The `createGraph` method initializes the d3 area chart by updating the
-       * scales and axis and then calling `updateGraph`
+       * Extending parent to include a rectangle showing dark hours
        *
        * @method createGraph
        * @return {Object} Returns undefined.
@@ -54,6 +53,18 @@
        */
       getYDomain: function() {
         return [0, 1];
+      },
+
+      /**
+       * Extending parent to include update of darkRect on resize
+       *
+       * @method updateArea
+       * @return {Object} Returns undefined.
+       */
+      updateArea: function() {
+          this.super();
+          this.chartContainer.selectAll(".darkRect")
+            .attr("width", this.width);
       },
 
       /**

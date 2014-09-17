@@ -1,12 +1,12 @@
 {
   "name": "bc-sun-chart",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "keywords": "sunrise, sunset, chart, polymer, web-components",
   "main": "bc-sun-chart.html",
   "dependencies": {
-    "bc-d3-areachart": "bilgecode/bc-d3-areachart#~0.3",
+    "bc-d3-areachart": "bilgecode/bc-d3-areachart#0.4.0",
     "jquery": "jquery/jquery#1.9.1",
-    "polymer": "Polymer/polymer#~0.3",
+    "polymer": "Polymer/polymer#0.4.0",
     "suncalc": "mourner/suncalc",
     "timezone-js": "mde/timezone-js#0.4",
     "tz": "eggert/tz"

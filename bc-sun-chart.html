@@ -37,10 +37,11 @@ Draws a d3 area chart of sunrise/sunset at a specific lat/lng
       debug="{{debug}}"
       centerline="{{centerline}}"
       showpoints="{{showpoints}}"></bc-sun-areachart>
-
   </template>
 
   <script type="text/javascript" src="../suncalc/suncalc.js"></script>
+  <script src="../jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="../timezone-js/src/date.js"></script>
   <script>
 
     Polymer('bc-sun-chart', {
@@ -139,6 +140,14 @@ Draws a d3 area chart of sunrise/sunset at a specific lat/lng
 
       observe: {
         "dataDomain": "updateData"
+      },
+
+      created: function() {
+        if(timezoneJS.timezone.zoneFileBasePath == undefined) {
+          // no need to re-init if it's already been done.
+          timezoneJS.timezone.zoneFileBasePath = this.resolvePath('../tz');
+          timezoneJS.timezone.init();
+        }
       },
 
       /**

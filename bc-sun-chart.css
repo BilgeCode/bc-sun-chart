@@ -15,7 +15,7 @@
 
 :host bc-sun-areachart::shadow .darkRect {
   fill: #333;
-  opacity: .5;
+  opacity: .2;
 }
 
 :host bc-sun-areachart::shadow .data-point {

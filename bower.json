@@ -1,7 +1,7 @@
 {
   "name": "bc-sun-chart",
   "version": "0.4.1",
-  "keywords": "sunrise, sunset, chart, polymer, web-components",
+  "keywords": ["sunrise", "sunset", "chart", "polymer", "web-components"],
   "main": "bc-sun-chart.html",
   "dependencies": {
     "bc-d3-areachart": "bilgecode/bc-d3-areachart#~0.4",
